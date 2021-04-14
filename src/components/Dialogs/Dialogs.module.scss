@@ -1,0 +1,18 @@
+.dialogs {
+  display: grid;
+  grid-template-columns: 2fr 10fr;
+  grid-template-areas:
+    "names message"
+    "names newPost";
+}
+.dialog__items {
+  padding: 15px;
+  color: white;
+  grid-area: names;
+}
+.dialog__newPost {
+  grid-area: newPost;
+}
+.dialog__messages {
+  grid-area: message;
+}

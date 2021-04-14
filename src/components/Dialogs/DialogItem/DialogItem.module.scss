@@ -1,0 +1,15 @@
+.dialog__item {
+  padding: 10px;
+
+  width: 100%;
+  height: 40px;
+}
+.dialog__item a {
+  text-decoration: none;
+  color: #c1390f;
+  font-size: 20px;
+  font-weight: 600;
+}
+.dialog__itemActive {
+  color: blueviolet;
+}

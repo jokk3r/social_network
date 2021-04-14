@@ -1,0 +1,52 @@
+.mainDivImg {
+}
+.mainImg {
+}
+.profile__img img {
+}
+
+.description__block {
+  width: 100%;
+  border: 2px solid red;
+  height: 620px;
+}
+.profile__main {
+  width: 100%;
+  display: flex;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #e7e7e7;
+  margin: 30px;
+}
+.profile__img {
+  width: 168px;
+  height: 222px;
+}
+.profile__info {
+  margin-left: 30px;
+}
+.profile__nameBlock {
+  font-size: 22px;
+}
+.profile__name {
+  margin-bottom: -10px;
+}
+.profile__status {
+  font-size: 16px;
+}
+
+.profile__description {
+  border-top: 1px solid #e7e7e7;
+  display: flex;
+
+  width: 550px;
+}
+.profile__parameter {
+  margin-right: 30px;
+  font-weight: 400;
+  color: #979797;
+  font-size: 16px;
+}
+.profile__userInfo {
+  margin-left: 10px;
+  font-size: 16px;
+}

@@ -1,0 +1,21 @@
+.posts {
+  &__item {
+    color: #c1390f;
+    padding: 5px;
+    border-bottom: 1px solid #c1390f;
+  }
+  &__item img {
+    width: 40px;
+    height: 40px;
+    margin-right: 25px;
+    border-radius: 20px;
+  }
+  &__info {
+    display: flex;
+    align-items: center;
+    padding-bottom: 4px;
+  }
+  &__likes {
+    padding: 5px;
+  }
+}
