@@ -16,6 +16,7 @@ const store = {
         { id: 3, post: "hi, what'up?", likeCount: 23 },
         { id: 6, post: "It's a second post", likeCount: 23 },
       ],
+
       newPostChange: "it something",
     },
     messagesPage: {

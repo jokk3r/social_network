@@ -22,7 +22,7 @@ function App() {
           <Switch>
             <Route path="/dialogs" render={() => <DialogsContainer />} />
             <Route path="/profile" render={() => <Profile />} />
-            <Route path="/feed" component={Feed} />
+            <Route path="/feed" render={() => <Feed />} />
             <Route path="/users" render={() => <UsersContainer />} />
             <Route path="/music" component={Music} />
             <Route path="/news" component={News} />

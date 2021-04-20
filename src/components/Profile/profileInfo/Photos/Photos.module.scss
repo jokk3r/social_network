@@ -1,0 +1,31 @@
+.photos__main {
+  width: 100%;
+  //   border: 1px solid green;
+  margin-bottom: 30px;
+}
+.photos__head {
+  width: 100%;
+  //   border: 1px solid blue;
+
+  display: flex;
+  justify-content: space-between;
+}
+.photos__name {
+  font-weight: 600;
+  font-size: 16px;
+  padding-left: 30px;
+}
+.photos__show {
+  color: #979797;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  padding-right: 40px;
+}
+.photos__images {
+  display: flex;
+}
+.photos__images img {
+  padding-left: 53px;
+  border-radius: 5px;
+}

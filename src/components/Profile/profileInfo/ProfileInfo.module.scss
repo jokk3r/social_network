@@ -7,17 +7,22 @@
 
 .description__block {
   width: 100%;
-  border: 2px solid red;
-  height: 620px;
+  border: 1px solid #ffffff;
+  height: 100%;
+  background-color: #ffffff;
+  border-radius: 10px;
+  // margin-bottom: 20px;
 }
 .profile__main {
-  width: 100%;
+  width: 92%;
   display: flex;
   padding-bottom: 30px;
   border-bottom: 1px solid #e7e7e7;
-  margin: 30px;
+  margin-left: 30px;
+  margin-bottom: 0;
 }
 .profile__img {
+  padding-top: 30px;
   width: 168px;
   height: 222px;
 }
@@ -37,8 +42,7 @@
 .profile__description {
   border-top: 1px solid #e7e7e7;
   display: flex;
-
-  width: 550px;
+  width: 542px;
 }
 .profile__parameter {
   margin-right: 30px;

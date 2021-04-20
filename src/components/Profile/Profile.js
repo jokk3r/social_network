@@ -5,15 +5,16 @@ import ProfileInfo from "./profileInfo/ProfileInfo";
 import MyPostsContainer from "./MyPosts/MyPostsContainer";
 
 function Profile(props) {
+  console.log(props);
   // debugger;
   return (
     <>
       <ProfileInfo />
       <MyPostsContainer
-        store={props.store}
-        // posts={props.state.postsData}
-        // state={props.state.newPostChange}
-        // dispatch={props.dispatch}
+
+      // posts={props.state.postsData}
+      // state={props.state.newPostChange}
+      // dispatch={props.dispatch}
       />
     </>
   );

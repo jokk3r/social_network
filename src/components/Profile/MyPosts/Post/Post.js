@@ -5,15 +5,15 @@ function Post(props) {
   return (
     <div className={style.posts__item}>
       <div className={style.posts__info}>
-        <img
-          src="https://st.depositphotos.com/1779253/5140/v/950/depositphotos_51405259-stock-illustration-male-avatar-profile-picture-use.jpg"
-          alt=""
-        />{" "}
-        <div>{props.message}</div>
+        <img src={props.img} alt="" />
+        <div>
+          <p className={style.posts__name}>{props.name}</p>
+          <div className={style.posts__message}>{props.message}</div>
+        </div>
       </div>
-      <div className={style.posts__likes}>
+      {/* <div className={style.posts__likes}>
         <span>{props.like} like</span>
-      </div>
+      </div> */}
     </div>
   );
 }

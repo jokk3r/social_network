@@ -1,7 +1,9 @@
 import React from "react";
 import style from "./ProfileInfo.module.scss";
 import ProfileBild from "./../../img/Sena.jpg";
-function ProfileInfo() {
+import Photos from "./Photos/Photos";
+function ProfileInfo(props) {
+  console.log(props);
   return (
     <div>
       <div className={style.description__block}>
@@ -28,6 +30,7 @@ function ProfileInfo() {
             </div>
           </div>
         </div>
+        <Photos store={props.store} />
       </div>
     </div>
   );
