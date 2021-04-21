@@ -50,7 +50,7 @@ class Feed extends React.Component {
       <div className={style.feed__block}>
         {this.state.posts.map((item, index) => {
           return (
-            <div className={style.feed__post}>
+            <div className={style.feed__post} key={index}>
               <div className={style.feed__head}>
                 <div className={style.feed__icon}>
                   <img src={item.icon} alt="" />
