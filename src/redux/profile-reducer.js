@@ -12,25 +12,24 @@ const initialState = {
   postsData: [
     {
       id: 1,
-      post: "Hi, guys!",
-      likeCount: 12,
-      name: "The Undertaker",
-      img: Comment2,
+      post: "Hey Jhon, wanna fight with me? I’ll beat you at wrestlmania! So be carefull!",
+      likeCount: 23,
+      name: "Dwayne Johnson",
+      img: Comment1,
     },
     {
       id: 2,
-      post: "Dwayne, you will eat my shit, my leg will be in your ASSHOLE!",
-      likeCount: 1,
+      post: "Dwayne, you don't stand a chance, we'll see soon who will be on top",
+      likeCount: 40,
       name: "Jhon Cena",
       img: Comment3,
     },
     {
       id: 3,
-      post:
-        "Hey Jhon, kiss my fucking black ass and suck my big cock! I’ll beat you at wrestlmania! So be very carefull, my fist in your ass!",
-      likeCount: 23,
-      name: "Dwayne Johnson",
-      img: Comment1,
+      post: "Hi, guys! I will definitely be!",
+      likeCount: 12,
+      name: "The Undertaker",
+      img: Comment2,
     },
   ],
 
