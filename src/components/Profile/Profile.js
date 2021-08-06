@@ -5,12 +5,8 @@ import MyPostsContainer from "./MyPosts/MyPostsContainer";
 function Profile(props) {
   return (
     <>
-      <ProfileInfo />
-      <MyPostsContainer
-      // posts={props.state.postsData}
-      // state={props.state.newPostChange}
-      // dispatch={props.dispatch}
-      />
+      <ProfileInfo profile={props.profile} />
+      <MyPostsContainer />
     </>
   );
 }

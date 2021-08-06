@@ -3,13 +3,13 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 import Header from "./components/Header/Header";
 import Navbar from "./components/Nav/Navbar";
-import Profile from "./components/Profile/Profile";
 import Feed from "./components/Feed/Feed";
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
 import News from "./components/News/News";
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
 import UsersContainer from "./components/Users/UsersContainer";
+import ProfileContainer from "./components/Profile/ProfileContainer";
 
 function App() {
   // debugger;
@@ -21,7 +21,10 @@ function App() {
         <div className="app__wrapper--content">
           <Switch>
             <Route path="/dialogs" render={() => <DialogsContainer />} />
-            <Route path="/profile" render={() => <Profile />} />
+            <Route
+              path="/profile/:userId?"
+              render={() => <ProfileContainer />}
+            />
             <Route path="/feed" render={() => <Feed />} />
             <Route path="/users" render={() => <UsersContainer />} />
             <Route path="/music" component={Music} />

@@ -6,12 +6,9 @@ import photo3 from "./../../img/photo3.jpg";
 import photo4 from "./../../img/photo4.jpg";
 
 export const ProfileInfoData = {
-  profileBild: CenaProfile,
-  name: "Jhon Cena",
-  status: "#BeHonestToYourself",
-  city: "WEST NEWBURY",
-  age: "43",
-  placeOfWork: "WWE",
+  city: "unknown",
+  age: "unknown",
+  placeOfWork: "unknown",
   checkWork: "check my work",
   photos: [photo1, photo2, photo3, photo4],
 };
