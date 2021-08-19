@@ -4,59 +4,15 @@ const SET_USERS = "SET-USERS";
 const SET_CURRENT_PAGE = "SET_CURRENT_PAGE";
 const SET_TOTAL_USERS_COUNT = "SET_TOTAL_USERS_COUNT";
 const TOGGLE_IS_FETCHING = "TOGGLE_IS_FETCHING";
+const TOGGLE_IS_FOLLOWING_PROGRESS = "TOGGLE_IS_FOLLOWING_PROGRESS";
 
 const initialState = {
-  users: [
-    // {
-    //   id: 1,
-    //   photos: {
-    //     small:
-    //       "https://www.gannett-cdn.com/presto/2020/04/18/USAT/f5e5f735-2eff-426c-a783-baca6d2872ab-05.JPG?crop=984,1012,x0,y0&width=1588",
-    //   },
-    //   followed: true,
-    //   fullName: "Michael Jordan",
-    //   status: "Time to play",
-    //   location: { city: "Chicago", country: "USA" },
-    // },
-    // {
-    //   id: 2,
-    //   photos: {
-    //     small:
-    //       "https://vignette.wikia.nocookie.net/p__/images/0/0d/2763428-Niko-Bellic.jpg/revision/latest/top-crop/width/360/height/450?cb=20130309215013&path-prefix=protagonist",
-    //   },
-    //   followed: false,
-    //   fullName: "Niko Bellic",
-    //   status: "I'm ready to go",
-    //   location: { city: "Liberty City", country: "USA" },
-    // },
-    // {
-    //   id: 3,
-    //   photos: {
-    //     small:
-    //       "https://i.pinimg.com/originals/13/8b/31/138b31858be04ab0375e6258173dbb1c.jpg",
-    //   },
-    //   followed: true,
-    //   fullName: "Vito Corleone",
-    //   status: "My family is everything to me",
-    //   location: { city: "New York", country: "USA" },
-    // },
-    // {
-    //   id: 4,
-    //   photos: {
-    //     small:
-    //       "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Tsiolkovsky.jpg/220px-Tsiolkovsky.jpg",
-    //   },
-    //   followed: false,
-    //   fullName: "Konstantin Tsiolkovsky",
-    //   status:
-    //     "Earth is the cradle of mankind; but one cannot live one's whole life in a cradle",
-    //   location: { city: "Kaluga", country: "Russia" },
-    // },
-  ],
+  users: [],
   pageSize: 10,
   totalUsersCount: 0,
   currentPage: 1,
   isFetching: true,
+  followingInProgress: [],
 };
 
 const usersReducer = (state = initialState, action) => {
@@ -90,6 +46,14 @@ const usersReducer = (state = initialState, action) => {
       return { ...state, totalUsersCount: action.count };
     case TOGGLE_IS_FETCHING:
       return { ...state, isFetching: action.isFetching };
+    case TOGGLE_IS_FOLLOWING_PROGRESS:
+      return {
+        ...state,
+        followingInProgress: action.isFetching
+          ? [...state.followingInProgress, action.userId]
+          : state.followingInProgress.filter((id) => id != action.userId),
+      };
+
     default:
       return state;
   }
@@ -110,5 +74,10 @@ export const setTotalUsersCount = (totalUsersCount) => ({
 export const toggleIsFetching = (isFetching) => ({
   type: TOGGLE_IS_FETCHING,
   isFetching,
+});
+export const toggleFollowingInProgress = (isFetching, userId) => ({
+  type: TOGGLE_IS_FOLLOWING_PROGRESS,
+  isFetching,
+  userId,
 });
 export default usersReducer;
