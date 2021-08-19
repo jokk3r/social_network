@@ -1,14 +1,20 @@
 .header {
   grid-area: head;
-
   background-color: #ffffffff;
-  // box-shadow: 1px 1px 2px rgb(34, 30, 30);
-  // border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
 }
-
 .header__name {
   padding-top: 12px;
   margin: 10px;
   font-weight: 800;
   font-size: 20px;
+}
+.loginBlock {
+  margin: 10px;
+  padding-top: 12px;
+}
+.loginBlock a {
+  text-decoration: none;
+  color: black;
 }

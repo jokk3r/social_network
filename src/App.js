@@ -1,7 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
-import Header from "./components/Header/Header";
 import Navbar from "./components/Nav/Navbar";
 import Feed from "./components/Feed/Feed";
 import Music from "./components/Music/Music";
@@ -10,13 +9,14 @@ import News from "./components/News/News";
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
 import UsersContainer from "./components/Users/UsersContainer";
 import ProfileContainer from "./components/Profile/ProfileContainer";
+import HeaderContainer from "./components/Header/HeaderContainer";
 
 function App() {
   // debugger;
   return (
     <div className="App">
       <Router>
-        <Header />
+        <HeaderContainer />
         <Navbar />
         <div className="app__wrapper--content">
           <Switch>

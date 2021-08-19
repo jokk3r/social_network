@@ -1,7 +1,10 @@
 import React from "react";
+import axios from "axios";
 import style from "./Users.module.scss";
 import userDefaultImg from "../img/user.png";
 import { NavLink } from "react-router-dom";
+import { followUnfollowAPI } from "../../api/api";
+
 function Users(props) {
   let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
 
@@ -44,6 +47,11 @@ function Users(props) {
               {user.followed ? (
                 <button
                   onClick={() => {
+                    followUnfollowAPI.getUnfollow(user.id).then((response) => {
+                      if (response.data.resultCode == 0) {
+                        props.unfollow(user.id);
+                      }
+                    });
                     props.unfollow(user.id);
                   }}
                 >
@@ -52,7 +60,11 @@ function Users(props) {
               ) : (
                 <button
                   onClick={() => {
-                    props.follow(user.id);
+                    followUnfollowAPI.getFollow(user.id).then((response) => {
+                      if (response.data.resultCode == 0) {
+                        props.follow(user.id);
+                      }
+                    });
                   }}
                 >
                   follow
