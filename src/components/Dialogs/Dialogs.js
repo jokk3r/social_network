@@ -2,26 +2,29 @@ import React from "react";
 import style from "./Dialogs.module.scss";
 import DialogItem from "./DialogItem/DialogItem";
 import Message from "./Message/Message";
+import { Redirect } from "react-router-dom";
 
 function Dialogs(props) {
   console.log(props);
 
   let state = props.messagesPage;
-  // let newEl = React.createRef();
-  const onHandlerChanger = (e) => {
-    let body = e.target.value;
 
-    props.newMessageClick(body);
-  };
-  let onSendMessage = () => {
-    props.sendMessage();
-  };
   let dialogsElements = state.dialogsData.map((item) => (
     <DialogItem name={item.name} id={item.id} key={item.id} />
   ));
   let messageElements = state.messagesData.map((item) => (
     <Message message={item.message} id={item.id} key={item.id} />
   ));
+
+  let onSendMessage = () => {
+    props.sendMessage();
+  };
+
+  const onNewMessageChange = (e) => {
+    let body = e.target.value;
+    props.newMessageClick(body);
+  };
+  if (!props.isAuth) return <Redirect to={"/login"} />;
   return (
     <div className={style.dialogs}>
       <div className={style.dialog__items}>{dialogsElements}</div>
@@ -37,7 +40,7 @@ function Dialogs(props) {
               rows="10"
               placeholder="enter your message"
               value={state.newMessageBody}
-              onChange={onHandlerChanger}
+              onChange={onNewMessageChange}
             ></textarea>
           </div>
           <div>

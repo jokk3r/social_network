@@ -3,7 +3,8 @@ import axios from "axios";
 import style from "./Users.module.scss";
 import userDefaultImg from "../img/user.png";
 import { NavLink } from "react-router-dom";
-import { followUnfollowAPI } from "../../api/api";
+import { usersAPI } from "../../api/api";
+import { unfollow } from "../../redux/users-reducer";
 
 function Users(props) {
   let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
@@ -50,13 +51,7 @@ function Users(props) {
                     (id) => id === user.id
                   )}
                   onClick={() => {
-                    props.toggleFollowingInProgress(true, user.id);
-                    followUnfollowAPI.getUnfollow(user.id).then((response) => {
-                      if (response.data.resultCode == 0) {
-                        props.unfollow(user.id);
-                      }
-                    });
-                    props.toggleFollowingInProgress(false, user.id);
+                    props.unfollow(user.id);
                   }}
                 >
                   unfollow
@@ -67,13 +62,7 @@ function Users(props) {
                     (id) => id === user.id
                   )}
                   onClick={() => {
-                    props.toggleFollowingInProgress(true, user.id);
-                    followUnfollowAPI.getFollow(user.id).then((response) => {
-                      if (response.data.resultCode == 0) {
-                        props.follow(user.id);
-                      }
-                      props.toggleFollowingInProgress(false, user.id);
-                    });
+                    props.follow(user.id);
                   }}
                 >
                   follow

@@ -1,7 +1,4 @@
 import React from "react";
-import style from "./Dialogs.module.scss";
-import DialogItem from "./DialogItem/DialogItem";
-import Message from "./Message/Message";
 import Dialogs from "./Dialogs";
 
 import { connect } from "react-redux";
@@ -14,6 +11,7 @@ import {
 let mapStateToProps = (state) => {
   return {
     messagesPage: state.messagesPage,
+    isAuth: state.auth.isAuth,
   };
 };
 let mapDispatchToProps = (dispatch) => {

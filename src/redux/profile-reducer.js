@@ -1,4 +1,5 @@
 import React from "react";
+import { usersAPI } from "../api/api";
 import Comment1 from "./../components/img/Comment1.png";
 import Comment2 from "./../components/img/Comment2.png";
 import Comment3 from "./../components/img/Comment3.png";
@@ -74,4 +75,11 @@ export const setUserProfile = (profile) => ({
   type: SET_USER_PROFILE,
   profile,
 });
+
+export const getUserProfile = (userId) => (dispatch) => {
+  usersAPI.getProfile(userId).then((response) => {
+    dispatch(setUserProfile(response.data));
+  });
+};
+
 export default profileReducer;
